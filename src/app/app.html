@@ -1,0 +1,23 @@
+<a class="skip" href="#projets">Aller au contenu</a>
+<div class="progress" aria-hidden="true"><i [style.transform]="'scaleX(' + scroll.progress() + ')'"></i></div>
+
+<app-header />
+
+<main id="accueil">
+  <app-hero />
+  <app-projects />
+  <app-skills />
+  <app-experience />
+  <app-education />
+  <app-certifications />
+  <app-contact />
+</main>
+
+<footer>
+  <div class="wrap">© {{ year }} Abdenour Tararbit</div>
+</footer>
+
+<button type="button" class="totop" [class.show]="scroll.showTop()" aria-label="Retour en haut de la page" (click)="scroll.toTop()">
+  <app-icon name="up" />
+</button>
+<div class="toast" [class.show]="toast.visible()" role="status" aria-live="polite">{{ toast.message() }}</div>
